@@ -22,3 +22,7 @@ jobs:
         run: |
           cd ./run/server-1
           tar -czf /tmp/server.tar.gz server.jar libs
+      - name: Publish package
+        run: ./gradlew publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
